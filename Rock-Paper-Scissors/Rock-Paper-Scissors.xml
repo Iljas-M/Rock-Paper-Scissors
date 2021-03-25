@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rock-Paper-Scissors</name>
+    </assembly>
+    <members>
+        <member name="T:Rock_Paper_Scissors.DifferentOptionTypes">
+            <summary>
+            Choice enum of scissors, rock or paper.
+            </summary>
+            <value>Scissors, rock or paper.</value>
+        </member>
+        <member name="F:Rock_Paper_Scissors.DifferentOptionTypes.Schere">
+            <summary>
+            The scissor.
+            </summary>
+        </member>
+        <member name="F:Rock_Paper_Scissors.DifferentOptionTypes.Stein">
+            <summary>
+            The rock.
+            </summary>
+        </member>
+        <member name="F:Rock_Paper_Scissors.DifferentOptionTypes.Papier">
+            <summary>
+            The paper.
+            </summary>
+        </member>
+        <member name="T:Rock_Paper_Scissors.GameLogic">
+            <summary>
+            The Game Logic Class.
+            </summary>
+        </member>
+        <member name="P:Rock_Paper_Scissors.GameLogic.CounterWins">
+            <summary>
+            Gets or sets the counter wins.
+            </summary>
+            <value> The counter wins. </value>
+        </member>
+        <member name="F:Rock_Paper_Scissors.GameLogic.pickedNumberList">
+            <summary>
+            The picked number list.
+            </summary>
+        </member>
+        <member name="P:Rock_Paper_Scissors.GameLogic.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value> The option type.</value>
+        </member>
+        <member name="M:Rock_Paper_Scissors.GameLogic.Calculation(Rock_Paper_Scissors.DifferentOptionTypes)">
+            <summary>
+            Calculations the specified user input.
+            </summary>
+            <param name="userInput">The user input.</param>
+            <returns>Winner or Loser.</returns>
+        </member>
+        <member name="M:Rock_Paper_Scissors.GameLogic.ComputerChoice">
+            <summary>
+            The computer chooses a number.
+            </summary>
+            <returns>Result of Computer.</returns>
+        </member>
+        <member name="T:Rock_Paper_Scissors.Output">
+            <summary>
+            The Console output is only used to for creating Output.
+            </summary>
+        </member>
+        <member name="M:Rock_Paper_Scissors.Output.GameInfo">
+            <summary>
+            Output the selection.
+            </summary>
+        </member>
+        <member name="T:Rock_Paper_Scissors.Program">
+            <summary>
+            The Program Class.
+            </summary>
+        </member>
+        <member name="M:Rock_Paper_Scissors.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+    </members>
+</doc>
