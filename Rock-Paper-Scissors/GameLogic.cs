@@ -35,36 +35,35 @@ namespace Rock_Paper_Scissors
             var pcInput = this.ComputerChoice();
             Console.WriteLine($"Computer : '{pcInput}' | You: '{userInput}'");
 
-            // Bestimmt kann man das viel leichter und schöner gestalten.
-            // Scheren Check.
-            if (pcInput == DifferentOptionTypes.Schere && userInput == DifferentOptionTypes.Papier)
+            // Scissors Check.
+            if (pcInput == DifferentOptionTypes.Scissors && userInput == DifferentOptionTypes.Paper)
             {
                 return "You lost!";
             }
-            else if (pcInput == DifferentOptionTypes.Schere && userInput == DifferentOptionTypes.Stein)
+            else if (pcInput == DifferentOptionTypes.Scissors && userInput == DifferentOptionTypes.Rock)
             {
                 this.CounterWins++;
                 return "You won!";
             }
 
-            // Papier Check.
-            if (pcInput == DifferentOptionTypes.Papier && userInput == DifferentOptionTypes.Schere)
+            // Paper Check.
+            if (pcInput == DifferentOptionTypes.Paper && userInput == DifferentOptionTypes.Scissors)
             {
                 this.CounterWins++;
                 return "You won!";
             }
-            else if (pcInput == DifferentOptionTypes.Papier && userInput == DifferentOptionTypes.Stein)
+            else if (pcInput == DifferentOptionTypes.Paper && userInput == DifferentOptionTypes.Rock)
             {
                 return "You lost!";
             }
 
-            // Stein Check.
-            if (pcInput == DifferentOptionTypes.Stein && userInput == DifferentOptionTypes.Papier)
+            // Rock Check.
+            if (pcInput == DifferentOptionTypes.Rock && userInput == DifferentOptionTypes.Paper)
             {
                 this.CounterWins++;
                 return "You won!";
             }
-            else if (pcInput == DifferentOptionTypes.Stein && userInput == DifferentOptionTypes.Schere)
+            else if (pcInput == DifferentOptionTypes.Rock && userInput == DifferentOptionTypes.Scissors)
             {
                 return "You lost!";
             }
@@ -88,18 +87,17 @@ namespace Rock_Paper_Scissors
             int tempNumber = 0;
 
             // Generate a new number only after two existing numbers.
-            if (this.pickedNumberList.Count > 2)
+            if (this.pickedNumberList.Count > 1)
             {
-                // The same number can only be used.
-                tempNumber = this.pickedNumberList[2];
+                // Get last number.
+                tempNumber = this.pickedNumberList[1];
                 this.pickedNumberList.Clear();
 
                 // if the third number is the same as the last, then generate a new one again.
-                do
+                while (tempNumber == randomNumber)
                 {
                     randomNumber = System.Security.Cryptography.RandomNumberGenerator.GetInt32(0, 3);
                 }
-                while (tempNumber == randomNumber);
             }
 
             // Go through the enum and output the selected type.

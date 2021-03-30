@@ -9,16 +9,16 @@
         /// <summary>
         /// The scissor.
         /// </summary>
-        Schere,
+        Scissors,
 
         /// <summary>
         /// The rock.
         /// </summary>
-        Stein,
+        Rock,
 
         /// <summary>
         /// The paper.
         /// </summary>
-        Papier,
+        Paper,
     }
 }

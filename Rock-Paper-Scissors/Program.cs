@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Rock_Paper_Scissors
 {
@@ -18,7 +19,7 @@ namespace Rock_Paper_Scissors
 
             Console.Write("Please write how many rounds you would like to play: ");
             bool inputRoundCheck = int.TryParse(Console.ReadLine(), out var rounds);
-            Output.GameInfo();
+            GameInfo();
 
             if (inputRoundCheck)
             {
@@ -26,9 +27,11 @@ namespace Rock_Paper_Scissors
                 {
                     Console.WriteLine("--------------------------------");
                     Console.Write("Select: ");
-                    bool inputCheck = int.TryParse(Console.ReadLine(), out var userInput);
 
-                    if (inputCheck && userInput < 3)
+                    string input = Console.ReadLine();
+                    bool inputCheck = int.TryParse(input, out var userInput);
+
+                    if (inputCheck && Enumerable.Range(0, 3).Contains(userInput) && input.ToString().Length == 1)
                     {
                         var result = newGame.Calculation((DifferentOptionTypes)userInput);
                         Console.WriteLine($"Result: {result}");
@@ -43,6 +46,20 @@ namespace Rock_Paper_Scissors
                 Console.WriteLine($"\r\nYou have won '{newGame.CounterWins}' out of '{rounds}' games!");
                 Console.WriteLine($"\r\nHAPPY CODING :)");
             }
+        }
+
+        /// <summary>
+        /// Output the selection.
+        /// </summary>
+        private static void GameInfo()
+        {
+            Console.WriteLine("\r\n************************************************************");
+            Console.Write("\r\n\t Welcome to the Rock-Paper-Scissors Game!\r\n");
+            Console.Write("\r\nPlease select: \r\n");
+            Console.Write("\r\n\t [0] for Scissor\r\n");
+            Console.Write("\t [1] for Rock\r\n");
+            Console.Write("\t [2] for Paper\r\n");
+            Console.WriteLine("\r\n************************************************************\r\n");
         }
     }
 }
